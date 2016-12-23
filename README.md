@@ -61,6 +61,7 @@ PATCH /collection/resource：返回完整的资源对象
 DELETE /collection/resource：返回一个空文档  
 对响应数据体服务端统一移除了值为null的属性，客户端无需处理返回值出现null的异常
 
+
 10. HTTP Request Header  
 Content-Type: application/json;charset=utf-8  
 Accept-Language: 国家缩写，服务端根据此信息返回国际化信息  
