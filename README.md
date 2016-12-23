@@ -39,7 +39,7 @@ DELETE（DELETE）：从服务器删除资源。
   "extra":"附加信息"
 }
 ```
-8.	业务异常错误码定义
+8.	业务异常错误码定义  
 业务错误码统一使用100XX   
 10001,"用户注册email重复",  
 10002,"用户名或密码错误",  
@@ -51,7 +51,7 @@ DELETE（DELETE）：从服务器删除资源。
 10008,"你已经评价过了",  
 10009,"该设备注册账号已超过限制"  
 
-9.	返回结果
+9.	返回结果  
 GET /collection：返回资源对象的列表（数组）  
 GET /collection/resource：返回单个资源对象  
 POST /collection：返回新生成的资源对象  
@@ -60,12 +60,12 @@ PATCH /collection/resource：返回完整的资源对象
 DELETE /collection/resource：返回一个空文档  
 对响应数据体服务端统一移除了值为null的属性，客户端无需处理返回值出现null的异常
 
-10. HTTP Request Header
+10. HTTP Request Header  
 Content-Type: application/json;charset=utf-8  
 Accept-Language: 国家缩写，服务端根据此信息返回国际化信息  
 Content-Length：数据长度  
 
-11. HTTP Responses Header
+11. HTTP Responses Header  
 Content-Language：响应体语言  
 Content-Type：application/json;charset=utf-8  
 Content-Length：响应体长度 
