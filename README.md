@@ -10,11 +10,11 @@ POST（CREATE）：在服务器新建一个资源。
 PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）。
 PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）。
 DELETE（DELETE）：从服务器删除资源。
-5.	过滤信息 
+5. 过滤信息 
 分页 ?pageNo=2&pageSize =100：指定第几页，以及每页的记录数。
 排序 ?sortBy=name&order=asc：指定返回结果按照哪个属性排序，以及排序顺序。
 过滤 ?animal_type_id=1：指定筛选条件
-6.	http状态码  
+6. http状态码  
 200 – OK – 请求成功  
 400 – Bad Request – 请求参数错误，数据体体现详细错误信息，在客户端提交的参数错误，加密错误时返回此状态码  
 401 – Unauthorized – 未授权，客户端在缺少签名信息时返回此状态码  
@@ -27,7 +27,7 @@ DELETE（DELETE）：从服务器删除资源。
 500 - Internal Server Error  - 内部服务器错误   
 502 - Bad Gateway 代理服务器错误  
 503 - Service Unavailable 服务器由于在维护或已经超载而无法响应  
-7.	错误处理  
+7. 错误处理  
 接口请求发生错误时，返回以下错误信息
 ```
 {
@@ -39,7 +39,8 @@ DELETE（DELETE）：从服务器删除资源。
   "extra":"附加信息"
 }
 ```
-8.	业务异常错误码定义  
+
+8. 业务异常错误码定义  
 业务错误码统一使用100XX   
 10001,"用户注册email重复",  
 10002,"用户名或密码错误",  
@@ -51,7 +52,7 @@ DELETE（DELETE）：从服务器删除资源。
 10008,"你已经评价过了",  
 10009,"该设备注册账号已超过限制"  
 
-9.	返回结果  
+9. 返回结果  
 GET /collection：返回资源对象的列表（数组）  
 GET /collection/resource：返回单个资源对象  
 POST /collection：返回新生成的资源对象  
