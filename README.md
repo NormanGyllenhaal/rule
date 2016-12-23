@@ -58,29 +58,31 @@ POST /collection：返回新生成的资源对象
 PUT /collection/resource：返回完整的资源对象  
 PATCH /collection/resource：返回完整的资源对象  
 DELETE /collection/resource：返回一个空文档  
+对响应数据体服务端统一移除了值为null的属性，客户端无需处理返回值出现null的异常
 
 10. HTTP Request Header
 Content-Type: application/json;charset=utf-8  
 Accept-Language: 国家缩写，服务端根据此信息返回国际化信息  
 Content-Length：数据长度  
+
 11. HTTP Responses Header
 Content-Language：响应体语言  
 Content-Type：application/json;charset=utf-8  
-Content-Length：响应体长度  
+Content-Length：响应体长度 
+
 
 
 
 ### 接口数据加密
-- 数据加密  
 接口数据统一采用des+rsa混合加密方式传输  
-1、信息(明文)采用DES密钥加密。  
-2、使用RSA加密前面的DES密钥信息。
+1. 信息(明文)采用DES密钥加密。  
+2. 使用RSA加密前面的DES密钥信息。
 
 针对post put patch 请求的数据体  
-请求方发送数据：  
-1 本地随机生成des密钥  
-2 用生成的des密钥加密数据  
-3 用rsa加密des密钥  
+- 请求方发送数据：  
+1. 本地随机生成des密钥  
+2. 用生成的des密钥加密数据  
+3. 用rsa加密des密钥  
 加密后数据体  
 ```
 {
@@ -88,16 +90,18 @@ Content-Length：响应体长度
    Key：rsa加密的des密钥
 }
 ```
-而接收方接收到信息后：  
+- 接收方接收到信息后：  
 1、用RSA解密DES密钥信息    
 2、再用RSA解密获取到的des密钥解密密文信息  
 响应数据体
+
 ```
 {
    Data:des加密的数据体
    Key：rsa加密的des密钥
 }
 ```
+
 ### 接口签名  
 为保证用户accessToken 的保密性和url的访问权限以及防止通过抓包的方式重复提交请求  
 *除用户登录和获取配置信息接口以外，其他接口发送时需要添加签名参数sign*
