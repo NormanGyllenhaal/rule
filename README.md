@@ -32,10 +32,10 @@ DELETE（DELETE）：从服务器删除资源。
 ```
 {
   "timestamp": "当前服务器时间",
-  "url": "错误的url",
+  "path": "错误路径",
   "error": "错误信息提示",
   "code": "错误码",
-  "requestId":"每个请求的唯一id，为方便查看异常日志",
+  "message":"错误详细提示",
   "extra":"附加信息"
 }
 ```
